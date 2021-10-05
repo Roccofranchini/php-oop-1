@@ -23,17 +23,16 @@ class Movie
     }
 
     public function isAvailable() {
-        if (!$this->isavailable > 0) {
-            echo !$this->isavailable;
+        if ($this->isavailable > 0) {
+            return 'Available for the purchase';
         } else {
             return 'Not available for the purchase';
         }
     }
 }
 
-$film1 = new Movie('Miele', 'Valeria golino', 'italiano', 'italia', '2019', 0);
-$film2 = new Movie('Parasite', 'Bong Joon-ho', 'coreano', 'corea del sud', '2013', 22);
-
+$film1 = new Movie('Miele', 'Valeria golino', 'italiano', 'italia', '2019', '0');
+$film2 = new Movie('Parasite', 'Bong Joon-ho', 'coreano', 'corea del sud', '2013', '1');
 
 ?>
 
@@ -63,7 +62,7 @@ $film2 = new Movie('Parasite', 'Bong Joon-ho', 'coreano', 'corea del sud', '2013
             echo "<p>$film2->language</p>";
             echo "<p>$film2->production</p>";
             echo "<p>$film2->year</p>";
-            echo $film1->isAvailable();
+            echo $film2->isAvailable();
         ?>
     </div>
 </body>
